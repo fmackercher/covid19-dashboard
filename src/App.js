@@ -8,6 +8,7 @@ import Table from './Table';
 import LineGraph from './LineGraph';
 import LineGraphD from './LineGraphDeaths';
 import { sortData } from './util';
+import numeral from 'numeral';
 
 
 // https://disease.sh/v3/covid-19/countries
@@ -89,9 +90,9 @@ function App() {
           </FormControl>
         </div>
         <div className="app_stats">
-          <InfoBox title='COVID-19 Cases' cases={countryInfo.todayCases} total={countryInfo.cases} />
-          <InfoBox title='COVID-19 Recoveries' cases={countryInfo.todayRecovered} total={countryInfo.recovered} />
-          <InfoBox title='COVID-19 Deaths' cases={countryInfo.todayDeaths} total={countryInfo.deaths} />
+          <InfoBox title='COVID-19 Cases' cases={numeral(countryInfo.todayCases).format("0,0")} total={numeral(countryInfo.cases).format('0,0')} />
+          <InfoBox title='COVID-19 Recoveries' cases={numeral(countryInfo.todayRecovered).format('0,0')} total={numeral(countryInfo.recovered).format('0,0')} />
+          <InfoBox title='COVID-19 Deaths' cases={numeral(countryInfo.todayDeaths).format("0,0")} total={numeral(countryInfo.deaths).format('0,0')} />
         </div>
         <Map countries={mapCountries} center={mapCenter} zoom={mapZoom} />
       </div>

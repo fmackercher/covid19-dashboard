@@ -2,7 +2,7 @@
   "name": "covid-dashboard",
   "version": "0.1.0",
   "private": true,
-  "homepage": "/covid19-dashboard",
+  "homepage": "https://fmackercher.github.io/covid19-dashboard/",
   "dependencies": {
     "@material-ui/core": "^4.12.3",
     "@react-leaflet/core": "^1.0.2",

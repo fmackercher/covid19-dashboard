@@ -7,7 +7,6 @@ import {
     PointElement,
     LineElement,
     Title,
-    Tooltip,
 } from 'chart.js'
 
 ChartJS.register(
@@ -16,7 +15,6 @@ ChartJS.register(
     PointElement,
     LineElement,
     Title,
-    Tooltip,
 )
 
 
@@ -46,32 +44,10 @@ const options = {
     },
     elements: {
         point: {
-            radius: 0,
+            radius: 0, //creates continuous line
         },
     },
-    tooltips: {
-        mode: "index",
-        intersect: false,
-    },
-    scales: {
-        xAxes: [
-            {
-                type: "time",
-                time: {
-                    unit: 'month',
-                    tooltipFormat: "ll",
-                },
-            },
-        ],
-        yAxes: [
-            {
 
-                gridLines: {
-                    display: false,
-                },
-            },
-        ],
-    },
 };
 
 
@@ -97,13 +73,13 @@ function LineGraphD({ deathsType }) {
 
     return (
         <div>
-            {data?.length > 0 && (
+            {(
                 <Line
                     data={{
                         datasets: [
                             {
-                                backgroundColor: "white",
                                 borderColor: "#FF0000",
+                                borderWidth: 5,
                                 data: data,
                             },
                         ],

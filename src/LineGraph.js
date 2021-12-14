@@ -43,32 +43,10 @@ const options = {
     },
     elements: {
         point: {
-            radius: 0,
+            radius: 0, //creates continuous line
         },
     },
-    tooltips: {
-        mode: "index",
-        intersect: false,
-    },
-    scales: {
-        xAxes: [
-            {
-                type: "time",
-                time: {
-                    unit: 'month',
-                    tooltipFormat: "ll",
-                },
-            },
-        ],
-        yAxes: [
-            {
 
-                gridLines: {
-                    display: false,
-                },
-            },
-        ],
-    },
 };
 
 
@@ -93,13 +71,13 @@ function LineGraph({ casesType }) {
 
     return (
         <div>
-            {data?.length > 0 && (
+            {(
                 <Line
                     data={{
                         datasets: [
                             {
-                                backgroundColor: "white",
                                 borderColor: "#FF0000",
+                                borderWidth: 5,
                                 data: data,
                             },
                         ],

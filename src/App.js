@@ -58,7 +58,7 @@ function App() {
   const onCountryChange = async (event) => {
     const countryCode = event.target.value;
 
-    //ternary operator
+    //ternary operator to set data according to endpoint
     const url = countryCode === 'worldwide'
       ? 'https://disease.sh/v3/covid-19/all'
       : `https://disease.sh/v3/covid-19/countries/${countryCode}`
